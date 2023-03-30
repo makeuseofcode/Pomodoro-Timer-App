@@ -8,6 +8,7 @@ reps = 0
 timer = None
 
 def reset_timer():
+    start_button["state"] = "normal"
     root.after_cancel(timer)
     canvas.itemconfig(timer_text, text="00:00")
     title_label.config(text="Timer", fg='#A020F0')
@@ -16,6 +17,7 @@ def reset_timer():
     reps = 0
 
 def start_timer():
+    start_button["state"] = "disabled"
     global reps
     reps += 1
     work_sec = WORK_MIN * 60
